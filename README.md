@@ -1,0 +1,1 @@
+Scripts for Learning C, student project for Holberton School 
