@@ -8,11 +8,13 @@
 
 int main(void)
 {
-	int a, b;
+	int a = 0;
+	int b;
 
-	for (a = 0 ; a <= 98 ; a++)
+	while (a <= 98)
 	{
-		for (b = a + 1 ; b <= 99; b++)
+		b = a + 1;
+		while (b <= 99)
 		{
 			putchar((a / 10) + '0');
 			putchar((a % 10) + '0'); /*modulo 10*/
