@@ -24,23 +24,23 @@ int main(void)
 				{
 					if (a < c || (a == c && b < d))
 					{
-						putchar(a);
-						putchar(b);
+					putchar(a);
+					putchar(b);
+					putchar(32);
+					putchar(c);
+					putchar(d);
+					if (a != '9' || b != '8' || c != '9' || d != '9')
+					{
+						putchar(44);
 						putchar(32);
-						putchar(c);
-						putchar(d);
-						if (a != '9' || b != '8' || c != '9' || d != '9')
-						{
-							putchar(44);
-							putchar(32);
-						}
 					}
 				}
-				c++;
 			}
+			c++;
 		}
-		a++;
 	}
-	putchar('\n');
-	return (0);
+	a++;
+}
+putchar('\n');
+return (0);
 }
