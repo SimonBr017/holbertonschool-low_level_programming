@@ -8,39 +8,29 @@
 
 int main(void)
 {
-	int a = 0;
-	int b;
-	int c;
-	int d;
+	int a, b;
 
-	while (a <= '9')
+	for (a = 0 ; a <= 98 ; a++)
 	{
-		for (b = '0' ; b <= '9' ; b++)
+		for (b = a + 1 ; b <= 99; b++)
 		{
-			c = '0';
-			while (c <= '9')
+			putchar((a / 10) + '0');
+			putchar((a % 10) + '0'); /*modulo 10*/
+			putchar(32);
+			putchar((b / 10) + '0');
+			putchar((b % 10) + '0');
+			if (a == 98 && b == 99)
 			{
-				for (d = '0' ; d <= '9' ; d++)
-				{
-					if (a < c || (a == c && b < d))
-					{
-					putchar(a);
-					putchar(b);
-					putchar(32);
-					putchar(c);
-					putchar(d);
-					if (a != '9' || b != '8' || c != '9' || d != '9')
-					{
-						putchar(44);
-						putchar(32);
-					}
-				}
+				putchar('\n');
 			}
-			c++;
+			else
+			{
+				putchar(44);
+				putchar(32);
+			}
+			b++;
 		}
+		a++;
 	}
-	a++;
-}
-putchar('\n');
-return (0);
+	return (0);
 }
