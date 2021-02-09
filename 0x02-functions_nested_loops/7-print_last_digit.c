@@ -5,7 +5,6 @@
  *
  *Return: returns r value of the las digit
  */
-
 int print_last_digit(int r)
 {
 	u = u % 10;
