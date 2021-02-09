@@ -1,8 +1,8 @@
 #include "holberton.h"
 /**
- * print_alphabet: print alphabet to sdtout ending with new line 
+ *print_alphabet - print alphabet what else
  *
- * Return: no returns
+ *Return: no returns
  */
 void print_alphabet(void)
 {
