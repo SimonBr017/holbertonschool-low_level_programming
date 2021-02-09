@@ -5,7 +5,7 @@
  *
  *Return: returns r value of the las digit
  */
-int print_last_digit(int n);
+int print_last_digit(int n)
 {
 	int x;
 
