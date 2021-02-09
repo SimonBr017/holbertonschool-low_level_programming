@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * main
+ * main - print Holberton plus back to line
  *
  * Return: always 0
  */
