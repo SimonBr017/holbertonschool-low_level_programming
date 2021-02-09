@@ -2,17 +2,17 @@
 /**
  *print_sign - check the sign of a number pos neg or 0
  *@n: number
- *give the sign of a number and print it
+ *
  *Return: returns 1 if pos 0 if nul -1 if neg
  */
 int print_sign(int n)
 {
-	if (n > '0')
+	if (n > 0)
 	{
 		_putchar('+');
 		return (1);
 	}
-	else if (n < '0')
+	else if (n < 0)
 	{
 		_putchar('-');
 		return (-1);
