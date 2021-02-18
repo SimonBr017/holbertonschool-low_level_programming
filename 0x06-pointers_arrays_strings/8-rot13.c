@@ -6,22 +6,18 @@
  */
 char *rot13(char *str)
 {
-	int i, j;
-	char *letrs = "ABCDEFGHIJKLMabcdefghijklm";
-	char *got13 = "NOPQRSTUVWXYZnopqrstuvwxyz";
+	int i;
 
 	for (i = 0 ; str[i] != '\0' ; i++)
 	{
-		for (j = 0 ; letrs[j] != '\0' ; j++)
+		while ((str[i] >= 'a' && str[i] <= 'm') || (str[i] >= 'A' && str[i] <= 'M'))
 		{
-			if (str[i] == letrs[j])
-			{
-				str[i] = got13[j];
-			}
-			else if (str[i] == got13[j])
-			{
-				str[i] = letrs[j];
-			}
+			str[i] = str[i] + 13;
+			i++;
+		}
+		if ((str[i] >= 'n' && str[i] <= 'z') || (str[i] >= 'N' && str[i] <= 'Z'))
+		{
+			str[i] = str[i] - 13;
 		}
 	}
 	return (str);
