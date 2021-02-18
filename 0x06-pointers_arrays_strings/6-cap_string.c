@@ -6,9 +6,9 @@
  */
 char *cap_string(char *str)
 {
-	int i,j;
+	int i, j;
 	char *c = " \t\n,;.!?\"(){}";
- 
+
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (str[0] >= 97 && str[0] <= 122)
