@@ -24,5 +24,9 @@ int carre(int n, int x)
  */
 int _sqrt_recursion(int n)
 {
+	if (n < 1)
+	{
+		return (-1);
+	}
 	return (carre(n, 0));
 }
