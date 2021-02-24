@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- *sqrt - find the square root
+ *carre - find the square root
  *@n: integer
  *@x: integer
  *Return: n if x*x=n, -1 if x*x>n else returns sqrt(n, x+1)
@@ -28,5 +28,5 @@ int _sqrt_recursion(int n)
 	{
 		return (-1);
 	}
-	return (carre(n, 1));
+	return (carre(n, 0));
 }
