@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- *wilcmp - compares two string
+ *wildcmp - compares two string
  *@s1: string
  *@s2: string
  *Return: 1 or 0
