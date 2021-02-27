@@ -11,20 +11,20 @@
  */
 int main(int argc, char *argv[])
 {
-	int i;
+	int i, j;
 	int total = 0;
 
 	for (i = 1 ; i < argc ; i++)
 	{
-		if (isdigit(*argv[i]))
+		for (j = 0; argv[i][j]; j++)
 		{
-			total = total + (atoi(argv[i]));
+			if (isdigit(argv[i][j]) == 0)
+			{
+				printf("Error\n");
+				return (1);
+			}
 		}
-		else
-		{
-			printf("Error\n");
-			return (1);
-		}
+		total = total + (atoi(argv[i]));
 	}
 	printf("%d\n", total);
 	return (0);
