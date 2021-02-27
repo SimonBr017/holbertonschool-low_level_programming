@@ -8,8 +8,8 @@
  */
 int main(int argc, char **argv)
 {
-	int cents = atoi(argv[1]);
-	int i;
+	int cents;
+        int i;
 
 	if (argc != 2)
 	{
@@ -21,6 +21,9 @@ int main(int argc, char **argv)
 		printf("0\n");
 		return (1);
 	}
+
+	cents = atoi(argv[1]);
+
 	for (i = 0 ; cents > 0 ; i++)
 	{
 		if (cents >= 25)
