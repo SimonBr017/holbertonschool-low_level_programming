@@ -11,7 +11,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int i, j;
+	int i;
 	int total = 0;
 
 	if (argc < 3)
@@ -21,17 +21,14 @@ int main(int argc, char *argv[])
 	}
 	for (i = 1 ; i < argc ; i++)
 	{
-		for (j = 0 ; argv[i][j] ; j++)
+		if (isdigit(*argv[i]))
 		{
-			if (isdigit(argv[i][j]))
-			{
-				total = total + (atoi(argv[i]));
-			}
-			else
-			{
-				printf("Error\n");
-				return (1);
-			}
+			total = total + (atoi(argv[i]));
+		}
+		else
+		{
+			printf("Error\n");
+			return (1);
 		}
 	}
 	printf("%d\n", total);
