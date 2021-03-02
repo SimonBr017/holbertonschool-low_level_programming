@@ -52,6 +52,5 @@ char *str_concat(char *s1, char *s2)
 	{
 		dest[i + j] = s2[j];
 	}
-	dest[i + j] = s2[j];
 	return (dest);
 }
