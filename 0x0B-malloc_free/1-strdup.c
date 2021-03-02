@@ -14,7 +14,7 @@ char _strlen(char *s)
 	{
 		i++;
 	}
-	return (i + 1);
+	return (i);
 }
 /**
  * *_strdup - return a pointer to a copy of the string

@@ -14,7 +14,7 @@ char _strlen(char *s)
 	{
 		i++;
 	}
-return (i + 1);
+return (i);
 }
 /**
  * *str_concat - concatenates two strings
