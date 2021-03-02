@@ -1,7 +1,21 @@
 #include "holberton.h"
-#include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
+/**
+ *_strlen - size of a string
+ *@s: string
+ *Return: lengh of the string
+ */
+char _strlen(char *s)
+{
+	int i = 0;
+
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+	return (i + 1);
+}
 /**
  * *_strdup - return a pointer to a copy of the string
  *@str: string
@@ -17,7 +31,7 @@ char *_strdup(char *str)
 		return (NULL);
 	}
 
-	dest = malloc(strlen(str) * sizeof(char));
+	dest = malloc(_strlen(str) * sizeof(char));
 	if (dest == NULL)
 	{
 		return (NULL);
