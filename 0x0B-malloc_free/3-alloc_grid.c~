@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * **alloc_grid - returns a pointer to a 2dimensional array of integer
+ * **alloc_grid - fuction that returns a pointer to a 2dimensional array of integer
  *@width: int
  *@height: int
  *Return: NULL if width or height ar neg or 0, returns a *[][]
@@ -13,10 +13,10 @@ int **alloc_grid(int width, int height)
 	int line, col;
 
 	if (width <= 0 || height <= 0)
-	{
-		return (NULL);
+	{	
+	return (NULL);
 	}
-	grid = malloc(height * sizeof(int *));
+	grid = malloc(height * sizeof(int*));
 
 	if (grid == NULL)
 	{
@@ -27,17 +27,17 @@ int **alloc_grid(int width, int height)
 		grid[line] = malloc(width * sizeof(int));
 		if (grid[line] == NULL)
 		{
-			for (col = 0; col <= line; col++)
-			{
-				free(grid[col]);
-			}
-			free(grid);
 			return (NULL);
 		}
+	
 		for (col = 0; col < width; col++)
 		{
-			grid[line][col] = 0;
+			grid[col] = malloc(height * sizeof(int));
+			if (grid[col] == NULL)
+			{
+				return (NULL);
+			}
 		}
 	}
-	return (grid);
-}
+	return grid[line][col];
+			      
