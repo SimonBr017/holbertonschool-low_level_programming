@@ -52,7 +52,7 @@ char *str_concat(char *s1, char *s2)
 	{
 		dest[i] = s1[i];
 	}
-	for (j = 0; i <= s2len; i++)
+	for (i = 0; i <= s2len; i++)
 	{
 		dest[i + s1len] = s2[i];
 	}
