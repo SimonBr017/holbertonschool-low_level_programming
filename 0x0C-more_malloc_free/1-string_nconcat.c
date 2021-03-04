@@ -24,16 +24,21 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 			s2len++;
 	else
 		s2 = "";
+
 	if (n >= s2len)
 		n = s2len;
-	else
-		dest = malloc((s1len + n + 1) * sizeof(char));
+
+       	dest = malloc((s1len + n + 1) * sizeof(char));
+
 	if (dest == NULL)
 		return (NULL);
+
 	for (i = 0; i < s1len; i++)
 		dest[i] = s1[i];
+
 	for (i = 0; i < s2len && i < n; i++)
 		dest[i + s1len] = s2[i];
+
 	dest[s1len + s2len] = '\0';
 	return (dest);
 }
