@@ -1,5 +1,6 @@
 #include "dog.h"
 #include <stdlib.h>
+#include <stdio.h>
 /**
  *_strlen - returns the length of a string
  *@s: string
@@ -42,8 +43,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 {
 	struct dog *n_dog;
 
-	n_dog = malloc(sizeof(struct dog_t));
-	if (dog_t == NULL)
+	n_dog = malloc(sizeof(struct dog));
+	if (n_dog == NULL)
 		return (NULL);
 
 	n_dog->name = malloc(sizeof(char) * (_strlen(name) + 1));
