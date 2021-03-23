@@ -11,9 +11,9 @@ int pop_listint(listint_t **head)
 
 	if (*head == NULL)
 		return (0);
-	tmp = *head; /*store head in tmp */
+	tmp = *head;
 	i = tmp->n;
-	*head = tmp->next; /* change the 1rst node */
+	*head = tmp->next;
 	free(tmp);
 	return (i);
 }
