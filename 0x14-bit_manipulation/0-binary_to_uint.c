@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- *unsigned int binary_to_uint - converti c'est clair nan ?
+ *binary_to_uint - converti c'est clair nan ?
  *@b: pointeur ver char ? ??????
  *Return: convert num ou 0
  */
