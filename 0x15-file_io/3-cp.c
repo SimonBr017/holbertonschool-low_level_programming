@@ -36,11 +36,11 @@ int main(int argc, char *argv[])
 	}
 	closer = close(file_from);
 	if (closer == -1)
-	{ dprintf(2, "Error: Can't close file_from %d\n", file_from);
+	{ dprintf(2, "Error: Can't close fd %d\n", file_from);
 		exit(100); }
 	closer = close(file_to);
 	if (closer == -1)
-	{ dprintf(2, "Error: Can't close file_to %d\n", file_to);
+	{ dprintf(2, "Error: Can't close fd %d\n", file_to);
 		exit(100); }
 	return (0);
 }
