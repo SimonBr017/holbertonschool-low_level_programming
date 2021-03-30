@@ -17,7 +17,7 @@ void filecheck(char *f1, char *f2)
  */
 void read_error(char *f)
 {
-	dprintf(2, "Error: Can't read from file %s\n", f);
+	dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", f);
 	exit(98);
 }
 /**
@@ -26,7 +26,7 @@ void read_error(char *f)
  */
 void write_error(char *f)
 {
-	dprintf(2, "Error: Can't write to %s\n", f);
+	dprintf(STDERR_FILENO, "Error: Can't write to %s\n", f);
 	exit(99);
 }
 /**
@@ -35,7 +35,7 @@ void write_error(char *f)
  */
 void close_error(int fd)
 {
-	dprintf(2, "Error: Can't close fd %d\n", fd);
+	dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 	exit(100);
 }
 /**
@@ -51,8 +51,10 @@ int main(int argc, char *argv[])
 	int read_f, write_f, closer;
 
 	if (argc != 3)
-	{ dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-		exit(97); }
+	{
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		exit(97);
+	}
 	filecheck(argv[1], argv[2]);
 	file_from = open(argv[1], O_RDONLY);
 	if (file_from == -1)
