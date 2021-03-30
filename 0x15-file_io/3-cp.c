@@ -47,8 +47,8 @@ void close_error(int fd)
 int main(int argc, char *argv[])
 {
 	int file_from, file_to;
+	char buf[1024];
 	int read_f, write_f, closer;
-	char *buf;
 
 	if (argc != 3)
 	{ dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
@@ -60,25 +60,23 @@ int main(int argc, char *argv[])
 	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (file_to == -1)
 		write_error(argv[2]);
-	buf = malloc(BUFSIZE * sizeof(char));
-	if (buf == NULL)
-		return (1);
-	read_f = read(file_from, buf, BUFSIZE);
+	read_f = read(file_from, buf, 1024);
 	if (read_f == -1)
 		read_error(argv[1]);
 	while (read_f > 0)
-	{ write_f = write(file_to, buf, read_f);
+	{
+		write_f = write(file_to, buf, read_f);
 		if (write_f == -1)
 			write_error(argv[2]);
-		read_f = read(file_from, buf, BUFSIZE);
+		read_f = read(file_from, buf, 1024);
 		if (read_f == -1)
-			read_error(argv[1]); }
+			read_error(argv[1]);
+	}
 	closer = close(file_from);
 	if (closer == -1)
 		close_error(closer);
 	closer = close(file_to);
 	if (closer == -1)
 		close_error(closer);
-	free(buf);
 	return (0);
 }
