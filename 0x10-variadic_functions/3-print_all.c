@@ -56,12 +56,6 @@ void print_string(va_list s)
 
 void print_all(const char * const format, ...)
 {
-	va_list aprm;
-
-	unsigned int i = 0;
-	unsigned int j = 0;
-	char *separator = "";
-
 	form_t forms[] = {
 		{"c", print_char},
 		{"i", print_integer},
@@ -69,24 +63,29 @@ void print_all(const char * const format, ...)
 		{"s", print_string},
 		{NULL, NULL}
 	};
+	va_list aprm;
+	unsigned int i = 0;
+	unsigned int j = 0;
+	char *separator = "";
 
 	va_start(aprm, format);
 
-	while (format && format[i])
+	while (format != NULL && format[i] != '\0')
 	{
-		while (j < 4)
+		j = 0;
+		while (forms[j].form != NULL)
 		{
 			if (format[i] == *(forms[j]).form)
 			{
 				printf("%s", separator);
-				separator = ", ";
 				forms[j].f(aprm);
+				separator = ", ";
+				break;
 			}
 			j++;
 		}
 		i++;
 	}
-	printf("\n");
-
 	va_end(aprm);
+	printf("\n");
 }

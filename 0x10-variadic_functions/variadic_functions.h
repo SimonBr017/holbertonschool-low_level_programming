@@ -12,7 +12,7 @@
 typedef struct format
 {
 	char *form;
-	void (*f)();
+	void (*f)(va_list);
 } form_t;
 int sum_them_all(const unsigned int n, ...);
 void print_numbers(const char *separator, const unsigned int n, ...);
