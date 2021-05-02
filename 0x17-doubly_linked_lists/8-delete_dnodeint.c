@@ -7,23 +7,23 @@
  */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-	unsigned int i;
 	dlistint_t *tmp;
 
 	tmp = *head;
 	if (*head == NULL)
 		return (-1);
+
+	for (; index != 0; index--)
+	{
+		if (tmp == NULL)
+			return (-1);
+		tmp = tmp->next;
+	}
 	if (index == 0)
 	{
 		*head = tmp->next;
 		free(tmp);
 		return (1);
-	}
-	for (i = 0; i < index; i++)
-	{
-		if (tmp == NULL)
-			return (-1);
-		tmp = tmp->next;
 	}
 	if (tmp == *head)
 	{
