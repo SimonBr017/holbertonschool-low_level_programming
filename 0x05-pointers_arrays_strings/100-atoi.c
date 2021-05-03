@@ -8,30 +8,22 @@
  */
 int _atoi(char *s)
 {
-	int i, sign, result;
-	int stop_conv;
+	unsigned int result = 0;
+	int symbol = 1;
+	int length = 0;
 
-	i = 0;
-	result = 0;
-	stop_conv = 0;
-	sign = 1;
-
-while (s[i] != '\0')
-{
-	if (s[i] == '-')
+	for (length = 0; s[length] != '\0'; length++)
 	{
-		sign *= -1;
+		if (s[length] == '-')
+		{
+			symbol *= -1;
+		}
+		else if (s[length] >= '0' && s[length] <= '9')
+		{
+			result = ((result * 10) + s[length]) - '0';
+		}
+		else if (result > 0)
+			break;
 	}
-	if (s[i] >= '0' && s[i] <= '9')
-	{
-		result *= 10;
-		result += (s[i] - '0');
-		stop_conv = 1;
-	}
-	else if (stop_conv == 1)
-		break;
-	i++;
-}
-result *= sign;
-return (result);
+	return (result * symbol);
 }
