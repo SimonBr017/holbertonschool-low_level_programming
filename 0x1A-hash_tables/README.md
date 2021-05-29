@@ -4,3 +4,6 @@
 
 2-key_index.c: function that gives you the index of a key.
 
+3-hash_table_set.c: function that adds an element to the hash table.
+
+4-hash_table_get.c: unction that retrieves a value associated with a key.
