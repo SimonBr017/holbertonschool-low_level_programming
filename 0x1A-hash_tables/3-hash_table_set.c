@@ -24,9 +24,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	new_elem->key = strdup(key);
 	new_elem->value = strdup(value);
-	new_elem->next = (*head);
-	(*head) = new_elem;
-
+	new_elem->next = NULL;
 	if (node != NULL)
 	{
 		while (node->next != NULL)
