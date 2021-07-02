@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "0x1A-hash_tables"
+		},
+		{
+			"path": "0x0F-function_pointers"
+		},
+		{
+			"path": "0x1C-makefiles"
+		}
+	],
+	"settings": {}
+}
