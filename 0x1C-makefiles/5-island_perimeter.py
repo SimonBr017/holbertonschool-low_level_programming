@@ -4,11 +4,8 @@ Island preimeter calculator
 """
 
 
-from typing import Collection
-
-
 def island_perimeter(grid):
-
+    """defition of island-perimeter"""
     peri = 0
 
     for row in range(len(grid)):
